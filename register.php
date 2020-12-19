@@ -133,6 +133,9 @@ if(isset($_POST['register_button']))
 		if($rand ==2)
 			$profile_pic = "assets/images/profile_pics/defaults/head_emerald.png";
 
+
+		$query = mysqli_query($con, "INSERT INTO users VALUES ('', '$vorname', '$nachname', '$username', '$em', '$password', '$date', '$profile_pic','0','0','no',',' )");
+
 	}
 
 
@@ -196,7 +199,7 @@ if(isset($_POST['register_button']))
 
 		<input type = "password" name = "register_password" placeholder="password" required>
 		<br>
-		<input type = "passworf" name = "register_password2" placeholder="confirm password" required>
+		<input type = "password" name = "register_password2" placeholder="confirm password" required>
 		<br>
 		<input type = "submit" name = "register_button" value="Register">
 		<?php if(in_array("Your password do not match.<br>", $error_array)) echo "Your password do not match.<br>"; 
