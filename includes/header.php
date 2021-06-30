@@ -30,12 +30,10 @@ else {
 <body>	
 
 	<div class="top_bar">
-		<div class="logo">
-			<a href="index.php">CCfeed!</a>
-			
-
-		</div>
 		
-
-
+		<div class="logo">
+			<a href="index.php">CCfeed!</a>		
+			<!--<img src="">		 -->
+			
+		</div>
 	</div>

@@ -1,9 +1,34 @@
+@font-face{
+	font-family: 'Bellota-LightItalic';
+	src: url('../fonts/Bellota-LightItalic.otf');
+}
+@font-face{
+	font-family: 'Bellota-BoldItalic';
+	src: url('../fonts/Bellota-BoldItalic.otf');
+}
+
+body {
+	line-height: 17px;
+}
+
 .top_bar {
 	width: 100%;
 	min-width: 1050px; 				/* won't be too small when resized, stop resizing after certain wert  */
 	height: 40px;
-	background-color: #a29bfe;  /*  https://flatuicolors.com/palette/us */
-	border-bottom: 0.25em solid #6c5ce7;
+	background-color: #ffeaa7;      /*  https://flatuicolors.com/palette/us */
+	border-bottom: 0.25em solid #fdcb6e;
 	margin: 0 0 10px 0;
 	display: inline-flex;
 }
+
+.logo a{                             /*  a means tag */
+	font-family: 'Bellota-BoldItalic', sans-serif;
+	margin-left: 10px;
+	font-size: 30;
+	position: relative;
+	top: 9px;
+	color: #fdcb6e;
+	text-shadow: #0c0a17 0.5px 0.5px 0px;	
+	text-decoration: none; /* no underline  */	
+}
+
