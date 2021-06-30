@@ -1,0 +1,102 @@
+@font-face{
+	font-family: 'Bellota-LightItalic';
+	src: url('../fonts/Bellota-LightItalic.otf');
+}
+@font-face{
+	font-family: 'Bellota-BoldItalic';
+	src: url('../fonts/Bellota-BoldItalic.otf');
+}
+
+form{
+	text-align: center; /*	form tag has style*/
+}
+
+html, body{
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+a {
+	text-decoration: none; /* no underline  */
+	color: #9da27b;
+}
+
+/*	dot means class   */
+.wrapper {			    
+	background-image: url("../images/backgrounds/deskto1p.jpg") ; /*	../ means previous folder  */
+	background-size: cover;   /*	cover can also be 100%  */
+	width:  100%;
+	height: 100%;
+	min-width: 950px;
+
+}
+
+.login_box{
+	font-family: 'Bellota-LightItalic', sans-serif;
+	position:  relative;
+	margin-right: auto;
+	margin-left: auto;
+	top: 10%;
+	width: 35%;
+	background-color: #ffffff;
+	border: 1px solid #EDEDED;
+	border-radius: 7px;
+	padding: 5px;
+	opacity: 0.89;
+}
+
+.login_header{
+	font-family: 'Bellota-LightItalic', sans-serif;
+	width: 100%;
+	height: 90px;
+	background-color: #b5bb8a;
+	color: #fff;
+	text-align: center;
+	border-top-left-radius:7px ;
+	border-top-right-radius:7px ;
+}
+/* fonts:   https://www.fontsquirrel.com/fonts/bellota */
+
+.login_header h3{   /* https://flatuicolors.com/palette/us  */
+	font-family: 'Bellota-BoldItalic', sans-serif;
+	margin-top: 0;
+	margin-bottom: 0;
+	color: #686344;
+	text-shadow: #83957f 0.8px 0.8px 0px;
+	font-size: 250%;
+}
+
+input[type="submit"]{
+	font-family: 'Bellota-BoldItalic', sans-serif;
+	background-color: #b5bb8a;
+	border: 1px solid #b5bb8a;
+	border-radius: 3px;
+	margin: 5px 0 10px 0;
+	padding: 5px 10 px 5px 10 px; /* padding in four directions : top right bottom left */
+	color: #686344;
+	text-shadow: #83957f 0.8px 0.8px 0px;
+	font-size: 100%;
+}
+
+input[type="text"],input[type="email"],input[type="password"]{
+	border: 1px solid #e5e5e5;
+	margin-top: 5px;
+	width: 60%;
+	height: 35px;
+	margin-bottom: 10px;
+	padding-left: 5px;
+}
+
+input[type="text"]:hover,input[type="email"]:hover,input[type="password"]:hover{
+	border-color: #b5bb8a;
+}
+
+#second{
+	display: none;
+}
