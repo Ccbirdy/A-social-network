@@ -15,8 +15,8 @@ body {
 	width: 100%;
 	min-width: 1050px; 				/* won't be too small when resized, stop resizing after certain wert  */
 	height: 40px;
-	background-color: #ffeaa7;      /*  https://flatuicolors.com/palette/us */
-	border-bottom: 0.25em solid #fdcb6e;
+	background-color: #b276ec;      /*  https://flatuicolors.com/palette/us */
+	border-bottom: 0.25em solid #8854d0;
 	margin: 0 0 10px 0;
 	display: inline-flex;
 }
@@ -27,8 +27,27 @@ body {
 	font-size: 30;
 	position: relative;
 	top: 9px;
-	color: #fdcb6e;
+	color: #8854d0;
 	text-shadow: #0c0a17 0.5px 0.5px 0px;	
 	text-decoration: none; /* no underline  */	
 }
 
+nav {
+	float: right;
+	right: 1px;
+	position: absolute;
+	margin: 10px;
+}
+
+nav a{
+	position: relative;
+	color: #fff;
+	text-decoration: none; /* no underline  */	
+	font-size: 17px;
+}
+
+nav a:hover {
+	border-bottom: 7px solid #fff;
+	color: #fff;
+}
+/* https://fontawesome.com/ */
