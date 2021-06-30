@@ -14,6 +14,21 @@ require 'includes/form_handlers/login_handler.php';
 	<script src="assets/js/register.js"></script>
 </head>
 <body>
+
+	<?php  									/* error hint don't show correctly, but jump */
+	if(isset($_POST['register_button'])){	/* if login button pressd, hide another but show error */
+		echo '
+		<script>
+
+		$(document).ready(function() {
+			$("#first").hide();
+			$("#second").show();
+		})
+
+		</script>
+		';
+	}
+	?>
 	<div class="wrapper" >	
 
 		<div class="login_box">
