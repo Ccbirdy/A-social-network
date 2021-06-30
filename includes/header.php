@@ -7,16 +7,20 @@ if (isset($_SESSION['username'])) {         /* if you not logged in , you cant s
 else {
 	header("Location: register.php");
 }
-
 ?>
-
 
 <html>
 <head>
 	<title>welcome to ccfeed</title>     <!-- https://getbootstrap.com/docs/5.0/getting-started/download/-->
+	<!-- Javascript  -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
+
+
+	<!-- CSS  -->
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 
     <!-- https://stackoverflow.com/questions/12458522/bootstrap-dropdown-not-working/65096525#65096525   -->
     <!-- without this cannot dropdown  -->
@@ -25,17 +29,13 @@ else {
 </head>
 <body>	
 
+	<div class="top_bar">
+		<div class="logo">
+			<a href="index.php">CCfeed!</a>
+			
 
-<div class="dropdown">
-  <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
+		</div>
+		
 
 
-
+	</div>

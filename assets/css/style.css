@@ -1,0 +1,9 @@
+.top_bar {
+	width: 100%;
+	min-width: 1050px; 				/* won't be too small when resized, stop resizing after certain wert  */
+	height: 40px;
+	background-color: #a29bfe;  /*  https://flatuicolors.com/palette/us */
+	border-bottom: 0.25em solid #6c5ce7;
+	margin: 0 0 10px 0;
+	display: inline-flex;
+}
