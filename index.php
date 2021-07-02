@@ -3,10 +3,10 @@ include("includes/header.php");
 //session_destroy();
 ?>
 	<div class="user_details column">    <!-- 2 classes -->
-		<a href="#">  <img src=" <?php echo $user['profile_pic']; ?>">  </a>
+		<a href="<?php echo $userLoggedIn; ?>">  <img src=" <?php echo $user['profile_pic']; ?>">  </a> <!-- profile pic link to person profile page -->
 
 		<div class="user_details_left_right"> 
-			<a href="#">  <!-- name is a link to profile -->
+			<a href="<?php echo $userLoggedIn; ?>">  <!-- name is a link to profile -->
 			<?php 
 			echo $user['first_name'] . " " .  $user['last_name'];
 
