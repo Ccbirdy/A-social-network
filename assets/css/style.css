@@ -67,9 +67,9 @@ nav a:hover {
 .column {
 	background-color: #fff;
 	padding: 10px;
-	border: 1px solid #D3D3D3;
+	border: 1px solid #aca8cd;
 	border-radius: 5px;
-	box-shadow: 2px 2px 1px #D3D3D3;
+	box-shadow: 2px 2px 1px #aca8cd;
 	z-index: -1;
 
 }
@@ -78,4 +78,16 @@ nav a:hover {
     width: 250px;
     float: left;
     margin-bottom: 20px;
+}
+
+.user_details_left_right {
+    width: 120px;
+    display: inline-block;
+    position: absolute;
+}
+
+.user_details img {
+    height: 120px;
+    border-radius: 5px;
+    margin-right: 5px;
 }
