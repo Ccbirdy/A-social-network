@@ -104,14 +104,35 @@ nav a:hover {
 }
 
 .post_form textarea {
-    width: 80%;
+    width: 81.5%;
     height: 60px;
-    border-radius: 5px;
+    border-radius: 3px;
     margin-right: 5px;
     border: 1px solid #aca8cd;
     font-size: 12px;
+    padding: 5px;
 }
 
 textarea:focus {
     outline: 0;       /* otherweise has a high light outline when press  */    
+}
+
+.post_form input[type="submit"] {
+    width: 12%;
+    height: 60px;
+    border: none;
+    border-radius: 3px;
+    background-color: #a29bfe;
+    font-family: 'Bellota-BoldItalic', sans-serif;
+    color: #fff;
+    text-shadow: #0c0a17 0.5px 0.5px 0px;   
+    font-size: 100%;
+    position: absolute;
+    outline: 0;
+    margin: 0;
+
+}
+
+.post_form input[type="submit"]:active {
+    padding:  6px 4px 2px 6px;  /* top right bottom left , when push in button share , has a move*/ 
 }

@@ -23,7 +23,7 @@ include("includes/header.php");
 	<div class="main_column column">
 		<form class="post_form" action="index.php" method="POST">
 			<textarea name="post_text" id="post_text" placeholder="Got something to share?"></textarea>
-			<input type="submit" name="post" id="post_button" value="Post">
+			<input type="submit" name="post" id="post_button" value="CCpost !">
 			<hr>
 			
 		</form>
