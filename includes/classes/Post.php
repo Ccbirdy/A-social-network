@@ -11,7 +11,9 @@ class Post {
 	public function submitPost($body, $user_to) {
 		$body = strip_tags($body); //removes html tags 
 		$body = mysqli_real_escape_string($this->con, $body);
-		$check_empty = preg_replace('/\s+/', '', $body); // delete all spaces
+		$body = str_replace('\r\n', "\n", $body);
+		$body = nl2br($body);
+		$check_empty = preg_replace('/\s+/', '', $body); //Deltes all spaces 
  					  
 		if($check_empty != "") {
 			// if we are in sb else's profile ,allow user to post , like private message?
