@@ -61,7 +61,7 @@ else {
 					<i class="fas fa-user-friends"></i>
 				</a>
 
-				<a href="#">
+				<a href="includes/handlers/logout.php">
 					<i class="fas fa-sign-out-alt"></i>
 				</a>
 
