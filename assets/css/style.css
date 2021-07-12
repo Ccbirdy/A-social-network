@@ -9,15 +9,15 @@
 
 body {
 	line-height: 17px;
-	background-color: #f0e8f8;
+	background-color: #EBDED3;
 }
 
 .top_bar {
 	width: 100%;
 	min-width: 1050px; 				/* won't be too small when resized, stop resizing after certain wert  */
 	height: 40px;
-	background-color: #a29bfe;      /*  https://flatuicolors.com/palette/us */
-	border-bottom: 0.25em solid #6c5ce7;
+	background-color: #BBCEBC;      /*  https://flatuicolors.com/palette/us */
+	border-bottom: 0.25em solid #819449;
 	margin: 0 0 10px 0;
 	display: inline-flex;
 	position: fixed;
@@ -30,8 +30,8 @@ body {
 	font-size: 30;
 	position: relative;
 	top: 9px;
-	color: #6c5ce7;
-	text-shadow: #0c0a17 0.5px 0.5px 0px;	
+	color: #FFFFFA;
+	text-shadow: #1B1A2B 0.5px 0.5px 0px;	
 	text-decoration: none; /* no underline  */	
 }
 
@@ -67,9 +67,9 @@ nav a:hover {
 .column {
 	background-color: #fff;
 	padding: 10px;
-	border: 1px solid #aca8cd;
+	border: 1px solid #819449;
 	border-radius: 5px;
-	box-shadow: 2px 2px 1px #aca8cd;
+	box-shadow: 2px 2px 1px #819449;
 	z-index: -1;
 
 }
@@ -108,7 +108,7 @@ nav a:hover {
     height: 60px;
     border-radius: 3px;
     margin-right: 5px;
-    border: 1px solid #aca8cd;
+    border: 1px solid #819449;
     font-size: 12px;
     padding: 5px;
 }
@@ -122,11 +122,11 @@ textarea:focus {
     height: 60px;
     border: none;
     border-radius: 3px;
-    background-color: #a29bfe;
+    background-color: #BBCEBC;
     font-family: 'Bellota-BoldItalic', sans-serif;
     color: #fff;
-    text-shadow: #0c0a17 0.5px 0.5px 0px;   
-    font-size: 100%;
+    text-shadow: #819449 0.5px 0.5px 0px;   
+    font-size: 110%;
     position: absolute;
     outline: 0;
     margin: 0;
