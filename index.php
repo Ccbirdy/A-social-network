@@ -8,6 +8,7 @@ include("includes/classes/Post.php");
 if(isset($_POST['post'])){
 	$post = new Post($con, $userLoggedIn);
 	$post->submitPost($_POST['post_text'], 'none');
+	header("Location: index.php"); // stop form resubmitting on refresh
 }
 
 
@@ -28,7 +29,7 @@ if(isset($_POST['post'])){
 
 			 ?>
 		 </div>
-
+s
 	</div>
 	<div class="main_column column">
 		<form class="post_form" action="index.php" method="POST">
