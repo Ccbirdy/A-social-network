@@ -42,6 +42,10 @@ nav {
 	margin: 10px;
 }
 
+a {
+	text-decoration: none; /* no underline  */
+	
+}
 nav a{
 	position: relative;
 	color: #fff;
