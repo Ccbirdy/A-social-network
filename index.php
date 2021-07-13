@@ -29,7 +29,7 @@ if(isset($_POST['post'])){
 
 			 ?>
 		 </div>
-s
+
 	</div>
 	<div class="main_column column">
 		<form class="post_form" action="index.php" method="POST">
@@ -41,8 +41,8 @@ s
 
 		<?php 
 
-		$user_obj = new User($con, $userLoggedIn);
-		echo $user_obj->getFirstAndLastName();
+		$post = new Post($con, $userLoggedIn);
+		$post->loadPostsFriends();
 
 		 ?>
 		
