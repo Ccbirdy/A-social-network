@@ -40,7 +40,7 @@ if(isset($_POST['post'])){
 		</form>		
 
 		<div class="post_area"></div>
-		<img id="#loading" src="assets/images/icons/loading.gif">
+		<img id="loading" src="assets/images/icons/loading.gif">
 		
 	</div>
 
@@ -71,9 +71,7 @@ if(isset($_POST['post'])){
 			var noMorePosts = $('.post_area').find('.noMorePosts');
 
 			if((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
-				$('#loading').show();
-				
-				
+				$('#loading').show();			
 
 				var ajaxReq = $.ajax({
 					url: "includes/handlers/ajax_load_posts.php",
