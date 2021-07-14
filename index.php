@@ -67,13 +67,13 @@ if(isset($_POST['post'])){
 		$(window).scroll(function(){
 			var height = $('.post_area').height();// div containing posts
 			var scroll_top = $(this).scrollTop();
-			var page = $('.posts_area').find('.nextPage').val();
-			var noMorePosts = $('post_area').find('.noMorePosts');
+			var page = $('.post_area').find('.nextPage').val();
+			var noMorePosts = $('.post_area').find('.noMorePosts');
 
 			if((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
 				$('#loading').show();
-
-
+				
+				
 
 				var ajaxReq = $.ajax({
 					url: "includes/handlers/ajax_load_posts.php",
