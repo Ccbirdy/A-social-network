@@ -68,7 +68,7 @@ if(isset($_POST['post'])){
 			var height = $('.post_area').height();// div containing posts
 			var scroll_top = $(this).scrollTop();
 			var page = $('.post_area').find('.nextPage').val();
-			var noMorePosts = $('.post_area').find('.noMorePosts');
+			var noMorePosts = $('.post_area').find('.noMorePosts').val();
 
 			if((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
 				$('#loading').show();			
