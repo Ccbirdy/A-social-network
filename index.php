@@ -8,7 +8,7 @@ include("includes/classes/Post.php");
 if(isset($_POST['post'])){
 	$post = new Post($con, $userLoggedIn);
 	$post->submitPost($_POST['post_text'], 'none');
-	header("Location: index.php"); // stop form resubmitting on refresh
+	//header("Location: index.php"); // stop form resubmitting on refresh
 }
 
 
@@ -19,12 +19,12 @@ if(isset($_POST['post'])){
 		<div class="user_details_left_right"> 
 			<a href="<?php echo $userLoggedIn; ?>">  <!-- name is a link to profile -->
 			<?php 
-			echo $user['first_name'] . " " .  $user['last_name'];
+			echo $user['first_name'] . " " . $user['last_name'];
 
 			 ?>
 			</a>
 			<br>
-			<?php echo "Posts: " . $user['num_posts'] . "<br>" ;
+			<?php echo "Posts: " . $user['num_posts']. "<br>";
 			echo "Likes: " . $user['num_likes'];
 
 			 ?>
@@ -37,9 +37,9 @@ if(isset($_POST['post'])){
 			<input type="submit" name="post" id="post_button" value="CCpost !">
 			<hr>
 			
-		</form>		
+		</form>
 
-		<div class="post_area"></div>
+		<div class="posts_area"></div>
 		<img id="loading" src="assets/images/icons/loading.gif">
 		
 	</div>
@@ -56,35 +56,35 @@ if(isset($_POST['post'])){
 			url: "includes/handlers/ajax_load_posts.php",
 			type: "POST",
 			data: "page=1&userLoggedIn=" + userLoggedIn,
-			cache: false,
+			cache:false,
 
 			success: function(data) {
 				$('#loading').hide();
-				$('.post_area').html(data);
+				$('.posts_area').html(data);
 			}
 		});
 
-		$(window).scroll(function(){
-			var height = $('.post_area').height();// div containing posts
+		$(window).scroll(function() {
+			var height = $('.posts_area').height();// div containing posts
 			var scroll_top = $(this).scrollTop();
-			var page = $('.post_area').find('.nextPage').val();
-			var noMorePosts = $('.post_area').find('.noMorePosts').val();
+			var page = $('.posts_area').find('.nextPage').val();
+			var noMorePosts = $('.posts_area').find('.noMorePosts').val();
 
-			if((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
+			if ((document.body.scrollHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') {
 				$('#loading').show();			
 
 				var ajaxReq = $.ajax({
 					url: "includes/handlers/ajax_load_posts.php",
 					type: "POST",
-					data: "page=" + page + "1&userLoggedIn=" + userLoggedIn,
-					cache: false,
+					data: "page=" + page + "&userLoggedIn=" + userLoggedIn,
+					cache:false,
 
 					success: function(response) {
-						$('.post_area').find('.nextPage').remove();  // removes current .nextPage
-						$('.post_area').find('.noMorePosts').remove();  // removes current .noMorePosts
+						$('.posts_area').find('.nextPage').remove();  // removes current .nextPage
+						$('.posts_area').find('.noMorePosts').remove();  // removes current .noMorePosts
 
 						$('#loading').hide();
-						$('.post_area').append(response);
+						$('.posts_area').append(response);
 					}
 				});
 
@@ -92,7 +92,7 @@ if(isset($_POST['post'])){
 
 			return false;
 
-		}) //end  $(window).scroll(function()
+		}); //end  $(window).scroll(function()
 
 	});		
 

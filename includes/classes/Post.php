@@ -43,6 +43,7 @@ class Post {
 	}
 
 	public function loadPostsFriends($data, $limit) {
+		//alert("hi");
 
 		$page = $data['page'];
 		$userLoggedIn = $this->user_obj->getUsername();
@@ -187,7 +188,7 @@ class Post {
 				$str .="<input type='hidden' class='nextPage' value='" . ($page +1) . "'>
 			    			<input type='hidden' class='noMorePosts' value='false'>";
 			else
-				$str .="<input type='hidden' class='noMorePosts' value='true'><p style='text-align: center;'>You reach the bottom! </p>";
+				$str .="<input type='hidden' class='noMorePosts' value='true'><p style='text-align: center;'>no more posts to show! </p>";
 
 
 		}
