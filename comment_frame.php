@@ -13,7 +13,7 @@
 
 	if (isset($_SESSION['username'])) {         /* if you not logged in , you cant see index.php  */
 		$userLoggedIn = $_SESSION['username'];
-		$user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn' ");
+		$user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
 		$user = mysqli_fetch_array($user_details_query);
 	}
 	else {
@@ -24,7 +24,7 @@
 		function toggle() {
 			var element = document.getElementById("comment_section");
 
-			if(element.style.display == "blcok")// if showing , hide it
+			if(element.style.display == "block")// if showing , hide it
 				element.style.display = "none";
 			else
 				element.style.display = "blcok";// if not showing , show it
@@ -42,11 +42,11 @@
 
 	$posted_to = $row['added_by'];
 
-	if(isset($_POST['postComment' . $post_id])) {
+	if(isset($_POST['postComment' .$post_id])) {
 		$post_body = $_POST['post_body'];
 		$post_body = mysqli_escape_string($con, $post_body);
 		$date_time_now = date("Y-m-d H:i:s");
-		$insert_post = mysqli_query($con, "INSERT INTO comments VALUES('', '$post_body','$userLoggedIn','$posted_to','$date_time_now', 'no', '$post_id')");
+		$insert_post = mysqli_query($con, "INSERT INTO comments VALUES ('', '$post_body', '$userLoggedIn', '$posted_to', '$date_time_now', 'no', '$post_id')");
 		//if($post_body !== "") {// preventing a user from posting a blank comment, with no text in it
 		//	$insert_post = mysqli_query($con, "INSERT INTO comments VALUES ('', '$post_body', '$userLoggedIn', '$posted_to', '$date_time_now', 'no', '$post_id')");
 		//}
@@ -78,7 +78,7 @@
 			$date_time_now = date("Y-m-d H:i:s");
 			$start_date = new DateTime($date_added); //Time of post
 			$end_date = new DateTime($date_time_now); //Current time
-			$interval = $start_date->diff($end_date); //Difference between dates 
+			$interval = $start_date->diff($end_date); //Difference between dates
 			if($interval->y >= 1) {
 				if($interval == 1)
 					$time_message = $interval->y . " year ago";//1 year ago
@@ -143,7 +143,7 @@
 	 }
 	  ?>
 	 <div class="comment_section">
-	 	<a href="<?php echo $posted_by?>">Micky_m</a>
+	 	<a href="<?php echo $posted_by?>"target="_parent">Micky_m</a>
 	 </div>
         
         
