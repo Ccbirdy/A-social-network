@@ -13,7 +13,7 @@ else {
 
 <html>
 <head>
-	<title>welcome to ccfeed</title>     <!-- https://getbootstrap.com/docs/5.0/getting-started/download/-->
+	<title>welcome to CC and her friends !</title>     <!-- https://getbootstrap.com/docs/5.0/getting-started/download/-->
 
 	<!-- Javascript  -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -36,7 +36,7 @@ else {
 	<div class="top_bar">
 
 		<div class="logo">
-			<a href="index.php">CCfeed!</a>		
+			<a href="index.php">CC and her friends!</a>		
 			<!--  <img src="">		 -->			
 		</div>
 

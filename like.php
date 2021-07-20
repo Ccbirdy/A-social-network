@@ -6,6 +6,21 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
+	<style type="text/css">
+	* {
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	body {
+		background-color: #fff;
+	}
+
+	form {
+	position: absolute;
+	top: 0;
+	}
+
+
+	</style>
 
 	<?php 
 	require 'config/config.php';
@@ -67,9 +82,9 @@
 
 	if($num_rows > 0) {
 		echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
-				<input type="submit" class="commit_like" name="unlike_button" value= "Unlike">
+				<input type="submit" class="comment_like" name="unlike_button" value= "Unlike ">
 				<div class="like_value">
-					'. $total_likes . 'Likes
+					' . $total_likes .'Likes
 
 				</div>
 			</form>
@@ -77,9 +92,9 @@
 	}
 	else {
 		echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
-				<input type="submit" class="commit_like" name="like_button" value= "Like">
+				<input type="submit" class="comment_like" name="like_button" value= "Like ">
 				<div class="like_value">
-					'. $total_likes . 'Likes
+					' . $total_likes  .'Likes
 
 				</div>
 			</form>
