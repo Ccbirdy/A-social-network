@@ -116,9 +116,9 @@ class Post {
 				<script> 
 					function toggle<?php echo $id; ?>(event){
                             
-					    var target = $(event.target);
+					    var target = $(event.target); // won't open comment first to go to personal's page
 					 
-					    if (!target.is('a') && !target.is('button')) {
+					    if (!target.is('a') && !target.is('button')) {   // if not a link show comment , if a  not show comment
 					        var element = document.getElementById("toggleComment<?php echo $id; ?>");
 					 
 					        if(element.style.display == "block")
@@ -212,7 +212,7 @@ class Post {
 							<div id='post_body'>
 								$body
 								<br>
-								<br>
+								<br>    <!-- COMMENT DOWN -->
 								<br>
 							</div>
  
