@@ -1,12 +1,5 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
-<body>
-
-	<?php 
+<?php 
 	require 'config/config.php';
 	include("includes/classes/User.php");
 	include("includes/classes/Post.php");
@@ -19,7 +12,24 @@
 	else {
 		header("Location: register.php");
 	}
-	?>
+?>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+	<style type="text/css">
+	* {
+		font-size: 12px;
+		font-family: Arial, Helvetica, Sans-serif;
+	}
+		
+
+	</style>
+
+	
 	<script>
 		function toggle() {
 			var element = document.getElementById("comment_section");
@@ -46,14 +56,15 @@
 		$post_body = $_POST['post_body'];
 		$post_body = mysqli_escape_string($con, $post_body);
 		$date_time_now = date("Y-m-d H:i:s");
-		$insert_post = mysqli_query($con, "INSERT INTO comments VALUES ('', '$post_body', '$userLoggedIn', '$posted_to', '$date_time_now', 'no', '$post_id')");
-		//if($post_body !== "") {// preventing a user from posting a blank comment, with no text in it
-		//	$insert_post = mysqli_query($con, "INSERT INTO comments VALUES ('', '$post_body', '$userLoggedIn', '$posted_to', '$date_time_now', 'no', '$post_id')");
-		//}
-		//else
-		//echo "<script>confirm('Please enter some text first')</script>";
+		//$insert_post = mysqli_query($con, "INSERT INTO comments VALUES ('', '$post_body', '$userLoggedIn', '$posted_to', '$date_time_now', 'no', '$post_id')");
+		if($post_body !== "") {// preventing a user from posting a blank comment, with no text in it
+			$insert_post = mysqli_query($con, "INSERT INTO comments VALUES ('', '$post_body', '$userLoggedIn', '$posted_to', '$date_time_now', 'no', '$post_id')");
+			echo "<p> Comment posted!</p>";
+		}
+		else
+		echo "<script>confirm('Please enter some text first')</script>";
 
-	echo "<p> Comment posted!</p>";
+	
 	}
 	 ?>
 	 <form action="comment_frame.php?post_id=<?php echo $post_id; ?>" id="comment_form" name="postComment<?php echo $post_id; ?>" method="POST">
@@ -152,6 +163,9 @@
 
 
 	 	}
+	 }
+	 else {
+	 	echo "<center><br><br>No comments to show!</center>";
 	 }
 	 ?>
      

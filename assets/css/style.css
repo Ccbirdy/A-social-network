@@ -12,6 +12,11 @@ body {
 	background-color: #EBDED3;
 }
 
+a {
+	text-decoration: none;
+    color: #489c4c;
+}
+
 .top_bar {
 	width: 100%;
 	min-width: 1050px; 				/* won't be too small when resized, stop resizing after certain wert  */
@@ -146,6 +151,7 @@ textarea:focus {
     font-size: 15px;
     padding: 0px 5px;
     min-height: 75px;
+    cursor: pointer;   /*  hand  !*/
 }
 
 .post_profile_pic {
@@ -155,4 +161,51 @@ textarea:focus {
 
 .post_profile_pic img {
 	border-radius: 5px;
+}
+
+#comment_iframe {
+	max-height: 250px;
+    width: 100%;
+    margin-top: 5PX;
+}
+
+.comment_section {
+	padding: 0 5px 5px 5px;
+}
+
+.comment_section img{
+	margin: 0 3px 3px 3px;
+	border-radius: 5px;
+}
+
+#comment_form textarea {
+	border-color: #D3D3D3;
+	width: 85%;
+    height: 35px;
+    border-radius: 5px;
+    color: #616060;
+    font-size: 14px;
+    margin: 3px 3px 3px 5px;
+}
+
+#comment_form input[type="submit"] {
+	border: none;
+	background-color: #BBCEBC;
+	color: #fff;
+	font-size: 120%;
+	border-radius: 5px;
+	width: 13%;
+	height: 35px;
+	margin-top: 5px;
+	position: absolute;
+	font-family: 'Bellota-BoldItalic', sans-serif;
+    color: #fff;
+    text-shadow: #819449 0.5px 0.5px 0px; 
+}
+
+.newsfeedPostOptions {
+	padding: 0px;
+	text-decoration: none;
+	color: #ACACAC;
+	border: none;
 }
