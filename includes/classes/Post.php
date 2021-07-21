@@ -256,7 +256,7 @@ class Post {
 			$str .= "<input type='hidden' class='nextPage' value='" . ($page + 1) . "'>
 						<input type='hidden' class='noMorePosts' value='false'>";
 		else 
-			$str .= "<input type='hidden' class='noMorePosts' value='true'><p style='text-align: centre;' class='noMorePostsText'> No more posts to show! </p>";
+			$str .= "<input type='hidden' class='noMorePosts' value='true'><p style='text-align: centre;' class='noMorePostsText'> Oops, you find the edge :) </p>";
 	}
  
 	echo $str;

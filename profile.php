@@ -1,5 +1,7 @@
 <?php 
 include("includes/header.php");
+include("includes/classes/User.php");
+include("includes/classes/Post.php");
 //session_destroy();
 
 if(isset($_GET['profile_username'])) {
@@ -34,6 +36,12 @@ if(isset($_GET['profile_username'])) {
 		
 		
 	</div>
+
+	<form action="<?php echo $username; ?>" method="POST">
+		$profile_user_obj = new User($con, $username);
+
+
+	</form>
 
 
 	</div>   <!-- closing tag for wrapper in header.php -->
