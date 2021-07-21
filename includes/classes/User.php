@@ -104,7 +104,7 @@ class User {
 		$query = mysqli_query($this->con, "INSERT INTO friend_requests VALUES('', '$user_to', '$user_from')");
 	}
 
-	public function getMutualFriends($user_to_check) {
+	public function getMutualFriends($user_to_check) { // return a friend we have in common
 		$mutualFriends = 0;
 		$user_array = $this->user['friend_array'];
 		$user_array_explode = explode(",", $user_array);

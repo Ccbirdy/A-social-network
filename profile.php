@@ -76,7 +76,7 @@ if(isset($_POST['respond_request'])) {
 
  	</div>
 
-	<div class="main_column column">
+	<div class="profile_main_column column">
 		<div class="posts_area"></div>
 		<img id="loading" src="assets/images/icons/loading.gif">
 
