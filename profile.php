@@ -24,21 +24,15 @@ if(isset($_GET['profile_username'])) {
  	
 	<div class="profile_left">
  		<img src="<?php echo $user_array['profile_pic']; ?>">
+
  		<div class="profile_info">
  			<p><?php echo "Posts: " . $user_array['num_posts']; ?></p>
  			<p><?php echo "Likes: " . $user_array['num_likes']; ?></p>
  			<p><?php echo "Friends: " . $num_friends ?></p>
  		</div>
- 	</div>
-	
-	<div class="main_column column">
-		<?php echo $username; ?>
-		
-		
-	</div>
 
-	<form action="<?php echo $username; ?>" method="POST">
-		<?php 
+ 		<form action="<?php echo $username; ?>" method="POST">
+ 			<?php 
  			$profile_user_obj = new User($con, $username); 
  			if($profile_user_obj->isClosed()) {
  				header("Location: user_closed.php");
@@ -61,10 +55,25 @@ if(isset($_GET['profile_username'])) {
  					echo '<input type="submit" name="add_friend" class="success" value="Add Friend"><br>';
 
  			}
+
+
+
  			?>
 
 
-	</form>
+ 		</form>
+
+ 	</div>
+
+	<div class="main_column column">
+		<?php echo $username; ?>
+		
+
+
+	</div>
+
+
+	
 
 
 	</div>   <!-- closing tag for wrapper in header.php -->
