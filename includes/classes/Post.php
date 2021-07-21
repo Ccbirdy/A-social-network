@@ -99,7 +99,8 @@ class Post {
 				else {
 					$count++;
 				}
- 
+
+				// delete button 
 				if($userLoggedIn == $added_by)
 					$delete_button = "<button class='delete_button btn-danger' id='post$id'>X</button>";
 				else 
@@ -228,6 +229,8 @@ class Post {
 						</div>
 						<hr>";
 			}
+
+
  
 			?>
 			<script>

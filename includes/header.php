@@ -21,6 +21,7 @@ else {
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<!--You are calling the ready function before the jQuery JavaScript is included. Reference jQuery first. -->	
 	<script src="assets/js/bootstrap.js"></script>
+	<script src="assets/js/bootbox.min.js"></script>
 	<script src="assets/js/demo.js"></script>
 	<script src="https://kit.fontawesome.com/fd2ffeb797.js" crossorigin="anonymous"></script>
     <!-- https://stackoverflow.com/questions/12458522/bootstrap-dropdown-not-working/65096525#65096525   -->
