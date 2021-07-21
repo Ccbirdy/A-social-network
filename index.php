@@ -1,7 +1,7 @@
 <?php 
-include("includes/header.php");
-include("includes/classes/User.php");
-include("includes/classes/Post.php");
+include_once("includes/header.php");
+include_once("includes/classes/User.php");
+include_once("includes/classes/Post.php");
 //session_destroy();
 
 

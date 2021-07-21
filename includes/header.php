@@ -59,7 +59,7 @@ else {
 					<i class="fas fa-inbox"></i>
 				</a>	
 
-				<a href="#">
+				<a href="requests.php">
 					<i class="fas fa-user-friends"></i>
 				</a>
 
