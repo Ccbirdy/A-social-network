@@ -54,7 +54,7 @@ class Message {
 		return $data;
 	}
 
-	public function getLatestMessage($userLoggedIn, $user2) {
+	public function getLatestMessage($userLoggedIn, $user2) {  // get latest message for each conversation
 		$details_array = array();
 
 		$query = mysqli_query($this->con, "SELECT body, user_to, date FROM messages WHERE (user_to='$userLoggedIn' AND user_from='$user2') OR (user_to='$user2' AND user_from='$userLoggedIn') ORDER BY id DESC LIMIT 1");
@@ -62,7 +62,9 @@ class Message {
 		$row = mysqli_fetch_array($query);
 		$sent_by = ($row['user_to'] == $userLoggedIn) ? "They said: " : "You said: ";
 
-		//Timeframe
+		/***************************************/
+		//Timeframe  //first occur in Post.php
+		/***************************************/
 		$date_time_now = date("Y-m-d H:i:s");
 		$start_date = new DateTime($row['date']); //Time of post
 		$end_date = new DateTime($date_time_now); //Current time
@@ -124,35 +126,35 @@ class Message {
 			else {
 				$time_message = $interval->s . " seconds ago";
 			}
-		}
+		}/***************************************/
 
-		array_push($details_array, $sent_by);
+		array_push($details_array, $sent_by);    //push details
 		array_push($details_array, $row['body']);
 		array_push($details_array, $time_message);
 
 		return $details_array;
 	}
 
-	public function getConvos() {
+	public function getConvos() { //  get conversation list
 		$userLoggedIn = $this->user_obj->getUsername();
 		$return_string = "";
 		$convos = array();
 
 		$query = mysqli_query($this->con, "SELECT user_to, user_from FROM messages WHERE user_to='$userLoggedIn' OR user_from='$userLoggedIn' ORDER BY id DESC");
 
-		while($row = mysqli_fetch_array($query)) {
+		while($row = mysqli_fetch_array($query)) { 			// add username to array convos
 			$user_to_push = ($row['user_to'] != $userLoggedIn) ? $row['user_to'] : $row['user_from'];
 
-			if(!in_array($user_to_push, $convos)) {
-				array_push($convos, $user_to_push);
+			if(!in_array($user_to_push, $convos)) { 		// check username already in array
+				array_push($convos, $user_to_push); 		// add username to array
 			}
 		}
 
 		foreach($convos as $username) {
 			$user_found_obj = new User($this->con, $username);
-			$latest_message_details = $this->getLatestMessage($userLoggedIn, $username);
+			$latest_message_details = $this->getLatestMessage($userLoggedIn, $username); // get latest message for each conversation
 
-			$dots = (strlen($latest_message_details[1]) >= 12) ? "..." : "";
+			$dots = (strlen($latest_message_details[1]) >= 12) ? "..." : "";   
 			$split = str_split($latest_message_details[1], 12);
 			$split = $split[0] . $dots; 
 
