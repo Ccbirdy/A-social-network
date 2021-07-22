@@ -70,7 +70,8 @@ if(isset($_POST['post_message'])) {
 				if($user_to == "new") {
 					echo "Select the friend you would like to message <br><br>";
 					?> 
-					To: <input type='text' onkeyup='getUsers(this.value, "<?php echo $userLoggedIn; ?>")' name='q' placeholder='Name' autocomplete='off' id='seach_text_input'>
+
+					To: <input type='text' onkeyup='getUsers(this.value, "<?php echo $userLoggedIn; ?>")' name='q' placeholder='Name' autocomplete='off' id='seach_text_input'> <!-- demo js  -->
 
 					<?php
 					echo "<div class='results'></div>";
@@ -87,7 +88,9 @@ if(isset($_POST['post_message'])) {
 
 		<script>  // auto matically scroll to most recent message
 			var div = document.getElementById("scroll_messages");
-			div.scrollTop = div.scrollHeight;
+			if(div != null) {
+				div.scrollTop = div.scrollHeight;
+			}
 		</script>
 	</div>
 

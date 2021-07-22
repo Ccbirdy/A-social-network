@@ -20,17 +20,19 @@ else {
 
 	<!-- Javascript  -->	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-	<!--You are calling the ready function before the jQuery JavaScript is included. Reference jQuery first. -->	
-	<script src="assets/js/bootstrap.js"></script>
-	<script src="assets/js/bootbox.min.js"></script>
-	<script src="assets/js/demo.js"></script>
+	<!--You are calling the ready function before the jQuery JavaScript is included. Reference jQuery first. -->		
 	<script src="https://kit.fontawesome.com/fd2ffeb797.js" crossorigin="anonymous"></script>
     <!-- https://stackoverflow.com/questions/12458522/bootstrap-dropdown-not-working/65096525#65096525   -->
     <!-- without this cannot dropdown  -->
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>  <!-- make sure you are including jQuery before bootstrap. -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<script src="assets/js/bootstrap.js"></script>
+	<script src="assets/js/bootbox.min.js"></script>
+	<script src="assets/js/demo.js"></script>
 	<script src="assets/js/jquery.Jcrop.js"></script>
 	<script src="assets/js/jcrop_bits.js"></script>
 
