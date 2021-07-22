@@ -348,32 +348,32 @@ textarea:focus {
 	margin: 0;
 	position: absolute;
 	border:none;
-	background-color: #20AAE5;
+	background-color: #85af87;
 	color: #fff;
-	border-radius: 5px;
+	border-radius: 3px;
 	font-family: 'Bellota-BoldItalic', sans-serif;
-	text-shadow: #73B6E2 0.5px 0.5px 0px;
+	text-shadow: #819449 0.5px 0.5px 0px;
 }
 
 .message {
-	border: 1px solid #000;
-	border-radius: 5px;
-	padding: 5px 10px;
-	display: inline-block;
-	color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: inline-block;
+    color: #fff;
 }
 
 .message#blue {
-	background-color: #3498db;
-	border-color: #2980b9;
-	float: right;
-	margin-bottom: 5px;
+	background-color: #6fa2c3;
+	border-color: #6fa2c3;
+	float: left;
+	/*margin-bottom: 5px;*/
 }
 .message#green {
-	background-color: #2ecc71;
-	border-color: #27ae60;
-	float: left;
-	margin-bottom: 5px;
+	background-color: #85af87;
+	border-color: #85af87;
+	float: right;
+	/*margin-bottom: 5px;*/
 }
 
 .loaded_messages {
