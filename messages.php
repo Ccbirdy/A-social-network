@@ -20,6 +20,16 @@ if($user_to != "new")     // if not tring to send new message then create a new 
 	$user_to_obj = new User($con, $user_to);
 	//echo "user_to here: v4;".$user_to ."<br>";
 
+if(isset($_POST['post_message'])) {
+
+	if(isset($_POST['message_body'])) {
+		$body = mysqli_real_escape_string($con, $_POST['message_body']);
+		$date = date("Y-m-d H:i:s");
+		$message_obj->sendMessage($user_to, $body, $date);
+	}
+
+}
+
  ?>
 
  <div class="user_details column">  <!-- from index.php -->
@@ -64,7 +74,7 @@ if($user_to != "new")     // if not tring to send new message then create a new 
 				}			
 					
 				else {
-					echo "<textarea name='message_body' id='message_textarea' placeholder='Write your message ...'></textarea>";
+					echo "<textarea name='message_body' id='message_textarea' placeholder='Say something to your friend...'></textarea>";
 					echo "<input type='submit' name='post_message' class='info' id='message_submit' value='Send'>";
 				}
 
