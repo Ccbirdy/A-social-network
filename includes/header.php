@@ -2,6 +2,7 @@
 require 'config/config.php';
 include("includes/classes/User.php");
 include("includes/classes/Post.php");
+include("includes/classes/Message.php");
 
 if (isset($_SESSION['username'])) {         /* if you not logged in , you cant see index.php  */
 	$userLoggedIn = $_SESSION['username'];
@@ -30,10 +31,14 @@ else {
     <!-- without this cannot dropdown  -->
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<script src="assets/js/jquery.Jcrop.js"></script>
+	<script src="assets/js/jcrop_bits.js"></script>
+
 
 	<!-- CSS  -->
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css"> 
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/jquery.Jcrop.css" type="text/css" />
 
 
 
@@ -66,6 +71,10 @@ else {
 
 				<a href="requests.php">
 					<i class="fas fa-user-friends"></i>
+				</a>
+
+				<a href="upload.php">
+					<i class="fas fa-cog"></i>
 				</a>
 
 				<a href="includes/handlers/logout.php">
