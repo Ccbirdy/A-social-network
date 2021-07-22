@@ -30,7 +30,7 @@ if(isset($_POST['post_message'])) {
         $date = date("Y-m-d H:i:s");
         $message_obj->sendMessage($username, $body, $date);
     }
-
+    //after send message don't jump to feed tab, but stay at message tab
     $link = '#profileTabs a[href="#messages_div"]';
     echo "<script> 
         $(function() {

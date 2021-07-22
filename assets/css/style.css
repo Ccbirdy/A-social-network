@@ -225,11 +225,13 @@ textarea:focus {
     height: auto;
     width: auto;
     margin: auto;
+    cursor: pointer;
 }
 
 .like_value {
 	display: inline;
 	font-size: 19px;
+	color: #efa8d0;	
 }
 
 .profile_left {
