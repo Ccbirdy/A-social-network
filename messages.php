@@ -71,7 +71,7 @@ if(isset($_POST['post_message'])) {
 					echo "Select the friend you would like to message <br><br>";
 					?> 
 
-					To: <input type='text' onkeyup='getUsers(this.value, "<?php echo $userLoggedIn; ?>")' name='q' placeholder='Name' autocomplete='off' id='seach_text_input'> <!-- demo js  -->
+					To: <input type='text' onkeyup='getUsers(this.value, "<?php echo $userLoggedIn; ?>")' name='q' placeholder='Name' autocomplete='off' id='seach_text_input'> <!-- demo js,  make the call to ajax_friend_search in the getUsers javascript function. This getUsers function is called because we have attached the function call to the keyup event of the textbox  -->
 
 					<?php
 					echo "<div class='results'></div>";
