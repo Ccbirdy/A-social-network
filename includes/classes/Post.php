@@ -233,7 +233,7 @@ class Post {
 
 
 	 
-				?>
+				?> 
 				<script>
 	 
 					$(document).ready(function() {
@@ -322,18 +322,19 @@ class Post {
 					?>
 					<script> 
 						function toggle<?php echo $id; ?>(event){
-	                            
+	                        if( !event ) event = window.event;    
+	                        
 						    var target = $(event.target); // won't open comment first to go to personal's page
+						    
 						 
-						    if (!target.is('a') && !target.is('button')) {   // if not a link show comment , if a  not show comment
+						    if (!target.is("a") && !target.is("button")) {  // if not a link show comment , if a  not show comment
 						        var element = document.getElementById("toggleComment<?php echo $id; ?>");
 						 
-						        if(element.style.display == "block")
-						            element.style.display = "none";
-						        else
-						            element.style.display = "block";
-						    }
-						                                
+						        if(element.style.display == "block") 
+									element.style.display = "none";
+								else 
+									element.style.display = "block";
+							}
 						}
 	 
 					</script>

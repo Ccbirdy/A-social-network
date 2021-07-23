@@ -56,33 +56,45 @@ else {
 		</div>
 
 		<nav>
-			  <a href="<?php echo $userLoggedIn; ?>">
-					<?php echo $user['first_name'] ?>
-				</a>
+			<?php
+				//Unread messages 
+				$messages = new Message($con, $userLoggedIn);
+				$num_messages = $messages->getUnreadNumber();
 
-				<a href="index.php">
-					<i class="fas fa-igloo"></i> 
-				</a>	
+				
+			?>
 
-				<a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')">
-					<i class="far fa-envelope"></i> 
-				</a>
+			<a href="<?php echo $userLoggedIn; ?>">
+				<?php echo $user['first_name'] ?>
+			</a>
 
-				<a href="#">
-					<i class="fas fa-inbox"></i>
-				</a>	
+			<a href="index.php">
+				<i class="fas fa-igloo"></i> 
+			</a>	
 
-				<a href="requests.php">
-					<i class="fas fa-user-friends"></i>
-				</a>
+			<a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')">
+				<i class="far fa-envelope"></i> 
+				<?php
+				if($num_messages > 0)
+				 echo '<span class="notification_badge" id="unread_message">' . $num_messages . '</span>';
+				?>
+			</a>
 
-				<a href="upload.php">
-					<i class="fas fa-cog"></i>
-				</a>
+			<a href="#">
+				<i class="fas fa-inbox"></i>
+			</a>	
 
-				<a href="includes/handlers/logout.php">
-					<i class="fas fa-sign-out-alt"></i>
-				</a>
+			<a href="requests.php">
+				<i class="fas fa-user-friends"></i>
+			</a>
+
+			<a href="upload.php">
+				<i class="fas fa-cog"></i>
+			</a>
+
+			<a href="includes/handlers/logout.php">
+				<i class="fas fa-sign-out-alt"></i>
+			</a>
 
 
 		</nav>
@@ -91,8 +103,8 @@ else {
 		<div class="dropdown_data_window" style="height:0px; border:none;"></div>
 		<input type="hidden" id="dropdown_data_type" value="">
 	</div>
-
-	<script>
+	<!--infinite scroll message dropdown window -->
+	<script>// change limit in ajax_load_messages.php
     $(function(){
  
         var userLoggedIn = '<?php echo $userLoggedIn; ?>';
