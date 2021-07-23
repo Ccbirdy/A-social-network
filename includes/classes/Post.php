@@ -245,7 +245,7 @@ class Post {
 								location.reload();
 						});
 	 
-					});
+					}); //https://www.udemy.com/course/make-a-social-media-website/learn/lecture/5293704#questions/3148370
 	 
 				</script>
 				<?php
