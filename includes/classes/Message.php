@@ -232,7 +232,7 @@ class Message {
 		}
 
 
-		//If posts were loaded
+		//If posts were loaded // change limit in ajax_load_messages.php
 		if($count > $limit)
 			$return_string .= "<input type='hidden' class='nextPageDropdownData' value='" . ($page + 1) . "'><input type='hidden' class='noMoreDropdownData' value='false'>";
 		else 
