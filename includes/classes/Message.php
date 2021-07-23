@@ -60,7 +60,7 @@ class Message {
 		$query = mysqli_query($this->con, "SELECT body, user_to, date FROM messages WHERE (user_to='$userLoggedIn' AND user_from='$user2') OR (user_to='$user2' AND user_from='$userLoggedIn') ORDER BY id DESC LIMIT 1");
 
 		$row = mysqli_fetch_array($query);
-		$sent_by = ($row['user_to'] == $userLoggedIn) ? "They said: " : "You said: ";
+		$sent_by = (isset($row['user_to']) && $row['user_to']  == $userLoggedIn) ? "They said: " : "You said: ";
 
 		/***************************************/
 		//Timeframe  //first occur in Post.php
@@ -171,14 +171,14 @@ class Message {
 
 	}
 
-	public function getConvosDropdown($data, $limit) {
+	public function getConvosDropdown($data, $limit) { // drop down envelop // like get convos (above)
 
 		$page = $data['page'];
 		$userLoggedIn = $this->user_obj->getUsername();
 		$return_string = "";
 		$convos = array();
 
-		if($page == 1)
+		if($page == 1) // if first
 			$start = 0;
 		else 
 			$start = ($page - 1) * $limit;
@@ -211,7 +211,7 @@ class Message {
 
 			$is_unread_query = mysqli_query($this->con, "SELECT opened FROM messages WHERE user_to='$userLoggedIn' AND user_from='$username' ORDER BY id DESC");
 			$row = mysqli_fetch_array($is_unread_query);
-			$style = ($row['opened'] == 'no') ? "background-color: #DDEDFF;" : "";
+			$style = (isset($row['opened']) && $row['opened'] == 'no') ? "background-color: #DDEDFF;" : "";
 
 
 			$user_found_obj = new User($this->con, $username);

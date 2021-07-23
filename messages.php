@@ -26,7 +26,7 @@ if(isset($_POST['post_message'])) {
 		$body = mysqli_real_escape_string($con, $_POST['message_body']);
 		$date = date("Y-m-d H:i:s");
 		$message_obj->sendMessage($user_to, $body, $date);
-		header("Location: message.php?u=$user_to"); // avoid Resubmitting the form when a page is refreshed
+		header("Location: messages.php?u=$user_to"); // avoid Resubmitting the form when a page is refreshed
 	}
 
 }

@@ -64,7 +64,7 @@ else {
 					<i class="fas fa-igloo"></i> 
 				</a>	
 
-				<a href="#">
+				<a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')">
 					<i class="far fa-envelope"></i> 
 				</a>
 
@@ -86,6 +86,10 @@ else {
 
 
 		</nav>
+		
+		<!--Dropdown Message Box (From Navigation Menu)-->
+		<div class="dropdown_data_window" style="height:0px; border:none;"></div>
+		<input type="hidden" id="dropdown_data_type" value="">
 	</div>
 
 	<div class ="wrapper">
