@@ -98,7 +98,7 @@
 	}
 	else {
 		echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
-				<input type="submit" class="comment_like" name="like_button" value= "👍">
+				<input type="submit" class="comment_like" name="like_button" value= "💪">
 				<div class="like_value">
 					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp❤️: ' . $total_likes .'
 
