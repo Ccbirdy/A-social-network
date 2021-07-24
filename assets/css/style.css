@@ -480,3 +480,7 @@ textarea:focus {
     margin: 1px 12px 0px 2px;
     float: left;
 }
+.timestamp_smaller {
+	font-size: 85%;
+	margin: 0;
+}

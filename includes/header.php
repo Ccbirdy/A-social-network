@@ -145,7 +145,7 @@ else {
  
             var pageName; //Holds name of page to send ajax request to
             var type = $('#dropdown_data_type').val();
- 
+ 			// infinite scroll don't work on drop down and post at same time
             if(type == 'notification')
                 pageName = "ajax_load_notifications.php";
             else if(type == 'message')
