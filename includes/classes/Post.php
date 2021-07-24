@@ -477,7 +477,7 @@ class Post {
 	public function getSinglePost($post_id) {  // from function loadPostsFriends
 
 		$userLoggedIn = $this->user_obj->getUsername();
-
+		// if you have opend this notificationm this set to be opened
 		$opened_query = mysqli_query($this->con, "UPDATE notifications SET opened='yes' WHERE user_to='$userLoggedIn' AND link LIKE '%=$post_id'");
 
 		$str = ""; //String to return 
