@@ -34,6 +34,10 @@ class Post {
 			$returned_id = mysqli_insert_id($this->con);
  
 			// insert notification
+			if($user_to != 'none') {
+				$notification = new Notification($this->con, $added_by);  // "profile_post" is type in function insertNotification
+				$notification->insertNotification($returned_id, $user_to, "profile_post"); // return the id of last post
+			}
  
 			// update post count for user
 			$num_posts = $this->user_obj->getNumPosts();
