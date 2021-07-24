@@ -5,10 +5,10 @@ include("../../includes/classes/User.php");
 $query = $_POST['query'];
 $userLoggedIn = $_POST['userLoggedIn'];
 
-$names = explode(" ", $query); // query explode into single array part
+$names = explode(" ", $query); // query seperate into single array part
 
 //If query contains an underscore, assume user is searching for usernames
-if(strpos($query, '_') !== false) 
+if(strpos($query, '_') !== false)  // if they are same type 3x= // if you find "_", true
 	$usersReturnedQuery = mysqli_query($con, "SELECT * FROM users WHERE username LIKE '$query%' AND user_closed='no' LIMIT 8");
 //If there are two words, assume they are first and last names respectively
 else if(count($names) == 2)
