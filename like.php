@@ -26,6 +26,7 @@
 	require 'config/config.php';
 	include("includes/classes/User.php");
 	include("includes/classes/Post.php");
+	include("includes/classes/Notification.php");
 
 	if (isset($_SESSION['username'])) {         /* if you not logged in , you cant see index.php  */
 		$userLoggedIn = $_SESSION['username'];
@@ -89,7 +90,7 @@
 		echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
 				<input type="submit" class="comment_like" name="unlike_button" value= "👎">
 				<div class="like_value">
-					' . $total_likes .'  ❤️
+					 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp❤️: ' . $total_likes .'
 
 				</div>
 			</form>
@@ -99,7 +100,7 @@
 		echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
 				<input type="submit" class="comment_like" name="like_button" value= "👍">
 				<div class="like_value">
-					' . $total_likes  .'  ❤️
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp❤️: ' . $total_likes .'
 
 				</div>
 			</form>

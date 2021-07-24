@@ -73,6 +73,7 @@ class Post {
 				$added_by = $row['added_by'];
 				if($row['added_by'] == null) exit("Added by is null");
 				$date_time = $row['date_added'];
+				
 	 
 				//Prepare user_to string so it can be included even if not posted to a user
 				if($row['user_to'] == "none") {
