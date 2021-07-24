@@ -72,12 +72,12 @@
 			}
 
 
-			$get_commenters = mysqli_query($con, "SELECT * FROM comments WHERE post_id='$post_id'");
+			$get_commenters = mysqli_query($con, "SELECT * FROM comments WHERE post_id='$post_id'"); // select all people commit to this post
 			$notified_users = array();
 			while($row = mysqli_fetch_array($get_commenters)) {
 				// give every iser commented notifications
-				if($row['posted_by'] != $posted_to && $row['posted_by'] != $user_to 
-					&& $row['posted_by'] != $userLoggedIn && !in_array($row['posted_by'], $notified_users)) {
+				if($row['posted_by'] != $posted_to && $row['posted_by'] != $user_to   // if not owner of the post 
+					&& $row['posted_by'] != $userLoggedIn && !in_array($row['posted_by'], $notified_users)) { // won't get multiple notifications
 
 					$notification = new Notification($con, $userLoggedIn);
 					$notification->insertNotification($post_id, $row['posted_by'], "comment_non_owner");
