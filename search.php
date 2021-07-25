@@ -74,12 +74,12 @@ else {
 				$mutual_friends = $user_obj->getMutualFriends($row['username']) . " friends in common";
 
 
-				//Button forms 
+				//Button forms, in the search result give them functionality
 				if(isset($_POST[$row['username']])) {
 
 					if($user_obj->isFriend($row['username'])) {
 						$user_obj->removeFriend($row['username']);
-						header("Location: http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
+						header("Location: http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"); // if you remove this friend, you don't need to refresh to see result
 					}
 					else if($user_obj->didReceiveRequest($row['username'])) {
 						header("Location: requests.php");
