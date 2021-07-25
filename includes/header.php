@@ -130,7 +130,7 @@ else {
 				?>				
 			</a>
 
-			<a href="upload.php">
+			<a href="settings.php">
 				<i class="fas fa-cog"></i>
 			</a>
 
