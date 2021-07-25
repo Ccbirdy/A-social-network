@@ -17,7 +17,23 @@ class Post {
 		$check_empty = preg_replace('/\s+/', '', $body); //Deltes all spaces 
  					  
 		if($check_empty != "") {
-			// if we are in sb else's profile ,allow user to post , like private message?
+			// Embed YouTube video
+			$body_array = preg_split("/\s+/", $body);
+
+			foreach($body_array as $key => $value) {
+
+				if(strpos($value, "www.youtube.com/watch?v=") !== false) {
+
+					$link = preg_split("!&!", $value);
+					$value = preg_replace("!watch\?v=!", "embed/", $link[0]);
+					$value = "<br><iframe width=\'420\' height=\'315\' src=\'" . $value ."\'></iframe><br>";
+					$body_array[$key] = $value;
+
+				}
+
+			}
+			$body = implode(" ", $body_array);
+			
 			
 			// current date and time
 			$date_added = date("Y-m-d H:i:s");
