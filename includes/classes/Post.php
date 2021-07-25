@@ -9,22 +9,22 @@ class Post {
 		$this->user_obj = new User($con, $user);
 	}
  
-	public function submitPost($body, $user_to) {
+	public function submitPost($body, $user_to, $imageName) {
 		$body = strip_tags($body); //removes html tags 
 		$body = mysqli_real_escape_string($this->con, $body);
 		$body = str_replace('\r\n', "\n", $body); // allow linebreaks
 		$body = nl2br($body);
 		$check_empty = preg_replace('/\s+/', '', $body); //Deltes all spaces 
  					  
-		if($check_empty != "") {
+		if($check_empty != "" || $imageName != "") { // allow you post without text
 			// Embed YouTube video
 			$body_array = preg_split("/\s+/", $body);
 
 			foreach($body_array as $key => $value) {
 
-				if(strpos($value, "www.youtube.com/watch?v=") !== false) {
+				if(strpos($value, "www.youtube.com/watch?v=") !== false) { // same type?
 
-					$link = preg_split("!&!", $value);
+					$link = preg_split("!&!", $value); // remove playlist, because if you post a playlist it wob't embed
 					$value = preg_replace("!watch\?v=!", "embed/", $link[0]);
 					$value = "<br><iframe width=\'420\' height=\'315\' src=\'" . $value ."\'></iframe><br>";
 					$body_array[$key] = $value;
@@ -46,7 +46,7 @@ class Post {
 			}
  
 			// insert post
-			$query = mysqli_query($this->con, "INSERT INTO posts VALUES('', '$body', '$added_by', '$user_to', '$date_added', 'no', 'no', '0')");
+			$query = mysqli_query($this->con, "INSERT INTO posts VALUES('', '$body', '$added_by', '$user_to', '$date_added', 'no', 'no', '0','$imageName')");
 			$returned_id = mysqli_insert_id($this->con);
  
 			// insert notification
@@ -89,6 +89,7 @@ class Post {
 				$added_by = $row['added_by'];
 				if($row['added_by'] == null) exit("Added by is null");
 				$date_time = $row['date_added'];
+				$imagePath = $row['image'];
 				
 	 
 				//Prepare user_to string so it can be included even if not posted to a user
@@ -223,6 +224,15 @@ class Post {
 							$time_message = $interval->s . " seconds ago";
 						}
 					}
+
+					if($imagePath != "") {
+						$imageDiv = "<div class='postedImage'>
+										<img src='$imagePath'>
+									</div>";
+					}
+					else {
+						$imageDiv = "";
+					}
 	 
 					$str .= "<div class='status_post' onClick='javascript:toggle$id(event)'>
 								<div class='post_profile_pic'>
@@ -236,6 +246,7 @@ class Post {
 								<div id='post_body'>
 									$body
 									<br>
+									$imageDiv
 									<br>    <!-- COMMENT DOWN -->
 									<br>
 								</div>
