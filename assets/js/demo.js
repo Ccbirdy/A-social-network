@@ -41,11 +41,11 @@ $(document).click(function(e){ //  Hiding the Live Search Results when Clicking 
 		$('.search_results_footer').toggleClass("search_results_footer_empty");
 		$('.search_results_footer').toggleClass("search_results_footer");
 	}
-
+	// for notifications
 	if(e.target.className != "dropdown_data_window") {
 
-		$(".dropdown_data_window").html("");
-		$(".dropdown_data_window").css({"padding" : "0px", "height" : "0px"});
+		$(".dropdown_data_window").html(""); // remove html
+		$(".dropdown_data_window").css({"padding" : "0px", "height" : "0px"}); // remove css/ backgrond
 	}
 
 
